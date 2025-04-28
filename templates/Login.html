@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Smart Expense{% endblock %}</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='Css/login.css')}}">
+    <script src="{{ url_for('static', filename='Js/password.js') }}"></script>
+
+</head>
+<body>
+
+<div class="Login-container">
+    {% block content %}
+
+    <video autoplay muted loop class="background-video">
+        <source src="{{ url_for('static', filename='videos/Login.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <header class="Login-header">
+        <h1 class="Login-title">Smart Expense Management</h1>
+        <div class="Login-links">
+            <a href="{{ url_for('login') }}" class="Login-link">Login</a>
+            <a href="{{ url_for('register') }}" class="Login-link">Register</a>
+        </div>
+    </header>
+
+    <div class="Login-form-container">
+    <h2>Login Here!!!</h2>
+    <form method="POST">
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter Email" required>
+        </div>
+ 
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <div style="position: relative;">
+                <input type="password" name="password" id="login-password" placeholder="Enter Password" required>
+                <span onclick="togglePassword('login-password')" style="position:absolute; right:10px; top:8px; cursor:pointer;">👁️</span>
+            </div>
+        </div>
+        
+
+        <div class="form-buttons">
+            <button type="reset">Reset</button>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+    </div>
+    
+    {% endblock %}
+</div>
+
+</body>
+</html>
+ 
+ 

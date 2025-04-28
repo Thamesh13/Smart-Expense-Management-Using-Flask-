@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Smart Expense{% endblock %}</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='Css/welcome.css')}}">
+
+</head>
+<body>
+
+<div class="Welcome-container">
+    {% block content %}
+
+    <video autoplay muted loop class="background-video">
+        <source src="{{ url_for('static', filename='videos/welcome.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <header class="Welcome-header">
+        <h1 class="Welcome-title">Smart Expense Management</h1>
+        <div class="Welcome-links">
+            <a href="{{ url_for('logout') }}" class="Welcome-link">Logout</a>
+        </div>
+    </header>
+
+    <div class="layout">
+        <div class="Welcome-sidebar">
+            <a href="{{ url_for('view_expenses') }}">>>View Expenses</a>
+            <a href="{{ url_for('add_expense') }}">>>Add Expenses</a>
+        </div>
+    
+
+    <div class="Welcome-form-container">
+        <h2>Welcome, {{ username }}!</h2>
+    </div>
+    
+    {% endblock %}
+</div>
+
+</body>
+</html>
+ 

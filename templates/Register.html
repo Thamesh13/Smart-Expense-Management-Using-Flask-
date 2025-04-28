@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Smart Expense{% endblock %}</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='Css/Registration.css')}}">
+    <script src="{{ url_for('static', filename='Js/password.js') }}"></script>
+
+</head>
+<body>
+
+<div class="Register-container">
+    {% block content %}
+
+    <video autoplay muted loop class="background-video">
+        <source src="{{ url_for('static', filename='videos/Login.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <header class="Register-header">
+        <h1 class="Register-title">Smart Expense Management</h1>
+        <div class="Register-links">
+            <a href="{{ url_for('home') }}" class="Register-link">Home</a>
+            <a href="{{ url_for('login') }}" class="Register-link">Login</a>
+        </div>
+    </header>
+
+    <div class="Register-form-container">
+        <h2>Registration Form</h2>
+        <form method="POST">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name" placeholder="Enter Name" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="phone">Phone No.:</label>
+                <input type="tel" name="phone" id="phone" placeholder="Enter Mobile No." required>
+            </div>
+    
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" placeholder="Enter Email" required>
+            </div>
+     
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <div style="position: relative;">
+                    <input type="password" name="password" id="reg-password" placeholder="Enter Password" required>
+                    <span onclick="togglePassword('reg-password')" style="position:absolute; right:10px; top:8px; cursor:pointer;">👁️</span>
+                </div>
+            </div>
+            
+    
+            <div class="form-buttons">
+                <button type="reset">Reset</button>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    
+    {% endblock %}
+</div>
+
+</body>
+</html>
+ 

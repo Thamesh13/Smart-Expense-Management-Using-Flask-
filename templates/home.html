@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Smart Expense{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Css/home.css') }}">
+</head>
+<body>
+
+<div class="home-container">
+    {% block content %}
+
+    <video autoplay muted loop class="background-video">
+        <source src="{{ url_for('static', filename='videos/Home.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <header class="home-header">
+        <h1 class="home-title">Smart Expense Management</h1>
+        <div class="home-links">
+            <a href="/login" class="home-link">Login</a>
+            <a href="/register" class="home-link">Register</a>
+        </div>
+    </header>
+
+    <div class="home-content">
+        <h2>Welcome to the Home Page</h2>
+    </div>
+    {% endblock %}
+</div>
+
+</body>
+</html>

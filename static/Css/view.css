@@ -1,0 +1,92 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Home container */
+.View-container {
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+/* Background video */
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 2.1;
+    z-index: -1;
+}
+
+/* Header styles */
+.View-header {
+    background: transparent;
+    padding: 20px 16px 0 467px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.View-title {
+    margin: 0;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.View-title:hover {
+    color: yellow;
+    transform: scale(1.1);
+}
+
+.View-links {
+    display: flex;
+    gap: 15px;
+}
+
+.View-link {
+    text-decoration: none;
+    color: lightblue;
+    font-weight: bold;
+    padding: 8px 12px;
+    transition: all 0.3s ease;
+}
+
+.View-link:hover {
+    border-color: lightgray;
+    background-color: #ccc;
+    transform: scale(1.1);
+    color: black;
+    border: 2px solid transparent;
+    border-radius: 30px;
+}
+
+/* Registration form container */
+.View-form-container {
+    margin: 100px auto;
+    margin-top: 79px;
+    max-width: 1000px;
+    padding: 30px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: transparent;
+    opacity:0.8;
+    text-align: center;
+}
+
+.View-form-container h2 {
+    text-align: center;
+    color: black;
+    margin-bottom: 20px;
+    transition: all 0.1s ease;
+}
+.View-form-container:hover h2{
+    color: white;
+    transform: scale(1.01);
+} 

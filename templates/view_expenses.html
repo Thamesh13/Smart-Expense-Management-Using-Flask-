@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Smart Expense{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Css/view.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
+
+</head>
+<body>
+
+<div class="View-container">
+    {% block content %}
+
+    <video autoplay muted loop class="background-video">
+        <source src="{{ url_for('static', filename='videos/view.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+
+    <header class="View-header">
+        <h1 class="View-title">Smart Expense Management</h1>
+        <div class="View-links">
+            <a href="{{ url_for('welcome') }}" class="View-link">Main</a>
+            <a href="{{ url_for('add_expense') }}" class="View-link">Add</a>
+            <a href="{{ url_for('logout') }}" class="View-link">Logout</a>
+        </div>
+    </header>
+
+    <div class="View-form-container">
+    <h2>View Expenses</h2>
+    <table border="1" cellpadding="10" cellspacing="0" class="table table-borderless table-striped table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Date</th>
+                <th>Item Name</th>
+                <th>Category</th>
+                <th>Reason</th>
+                <th>Amount</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody class="table-secondary">
+            {% for expense in expenses %}
+            <tr>
+                <td>{{ expense[0] }}</td>
+                <td>{{ expense[1] }}</td>
+                <td>{{ expense[2] }}</td>
+                <td>{{ expense[3] }}</td>
+                <td>{{ expense[4] }}</td>
+                <td>${{ '%.2f'|format(expense[5]) }}</td>
+                <td><a href="{{ url_for('edit_expense', expense_id=expense[0]) }}">✏️</a></td>
+
+                <td><a href="{{ url_for('delete_expense', expense_id=expense[0]) }}">🗑️</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    
+    {% endblock %}
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+</body>
+</html>
+ 

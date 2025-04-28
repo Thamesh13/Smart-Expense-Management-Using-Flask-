@@ -1,0 +1,135 @@
+
+/* Common settings */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Home container */
+.Login-container {
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+/* Background video */
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 2.1;
+    z-index: -1;
+}
+
+/* Header styles */
+.Login-header {
+    background: transparent;
+    padding: 20px 16px 0 467px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Login-title {
+    margin: 0;
+    color: Black;
+    transition: all 0.3s ease;
+}
+
+.Login-title:hover {
+    color: gray;
+    transform: scale(1.1);
+}
+
+.Login-links {
+    display: flex;
+    gap: 15px;
+}
+
+.Login-link {
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+    padding: 8px 12px;
+    transition: all 0.3s ease;
+}
+
+.Login-link:hover {
+    border-color: lightgray;
+    background-color: #ccc;
+    transform: scale(1.1);
+    color: black;
+    border: 2px solid transparent;
+    border-radius: 30px;
+}
+
+/* Registration form container */
+.Login-form-container {
+    margin: 0 auto;
+    margin-top: 107px;
+    max-width: 426px;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: 39px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);}
+
+.Login-form-container h2 {
+    text-align: center;
+    color: Black;
+    margin-bottom: 20px;
+    transition: all 0.1s ease;
+}
+.Login-form-container:hover h2{
+    color: gray;
+    transform: scale(1.01);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    padding: 0 0 0 3%;
+    color: darkslategray;
+}
+
+.form-group input {
+    width: 95%;
+    padding: 10px;
+    border-radius: 45px;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease;
+}
+.form-group input:hover {
+    transform: scale(1.05);
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-buttons button {
+    width: 48%;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    transition: all 0.3s ease;
+}
+
+.form-buttons button:hover {
+    background-color: lightblue;
+    transform: scale(1.05);
+}
